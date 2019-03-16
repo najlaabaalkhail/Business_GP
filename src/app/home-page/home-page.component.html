@@ -1,0 +1,92 @@
+<div >
+<header>
+<div class="topbar animated fadeInLeftBig"></div>
+
+<!-- Header Starts -->
+
+<div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
+ <img src='assets/imgs/EradLogo++2.png' class="Mainlogo"> 
+
+            <div class="navbar-header">
+              <!-- Logo Starts -->
+             <!-- <a class="navbar-brand" href="#home"><img src="images/logo.png" alt="logo"></a> شعار اللوقو-->
+              <!-- #Logo Ends -->
+
+             
+              <button type="button" class="navbar-toggle collapsed" (click)="toggleCollapse()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+            </div>
+
+
+            <!-- Nav Starts -->
+            <div class="navbar-collapse  collapse" [class.show]="show">
+              <ul class="nav navbar-nav navbar-left scroll">
+              <li [routerLinkActive]="['active']"><a routerLink='/LogIn' > تسجيل الدخول</a></li> 
+              <li [routerLinkActive]="['active']"><a routerLink='/register'>اشترك الآن</a></li> 
+               <li [routerLinkActive]="['active']"><a routerLink='/customer'>المستفيدون</a></li>
+               <li [routerLinkActive]="['active']"><a routerLink='/features' >المميزات</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink='/ ' >الصفحة الرئيسة</a></li>
+              </ul>
+            </div>
+
+
+            <!-- #Nav Ends -->
+
+          </div>
+     
+      </div>
+    </div>
+  </header>
+  <main role="main" class="container RouterContainer">
+<div class="col-md-12 col-sm-12 container content  ">
+    <flash-messages></flash-messages>
+
+<router-outlet> </router-outlet>
+
+</div>
+
+
+</main>
+<div>
+
+
+<footer>
+  <!-- Footer Starts -->
+  <div class="footerContainer ">
+  <p class="wowload flipInX footertext">
+  <a href="https://twitter.com/Erad_System"> <i class="fa fa-twitter fa-2x"></i></a>
+  <a href="https://www.youtube.com/channel/UC_ZZTu0-NN5nQzjdgzJ3wcg"><i class="fa fa-youtube fa-2x"></i></a> </p> <p class="footertext">
+  جميع الحقوق محفوظة لإيراد @2018  </p>
+  </div>
+  <!-- # Footer Ends -->
+  </footer>
+</div>
+
+</div>
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="assets/jquery.js"></script>
+
+<!-- wow script -->
+<script src="assets/wow/wow.min.js"></script>
+
+
+<!-- boostrap -->
+<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript" ></script>
+
+<!-- jquery mobile -->
+<script src="assets/mobile/touchSwipe.min.js"></script>
+<script src="assets/respond/respond.js"></script>
+
+<!-- gallery -->
+<script src="assets/gallery/jquery.blueimp-gallery.min.js"></script>
+
+<!-- custom script -->
+<script src="assets/script.js"></script>

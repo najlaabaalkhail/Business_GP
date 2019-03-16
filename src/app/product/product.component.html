@@ -1,0 +1,63 @@
+
+      
+      
+   <div  class="PageTitle col-md-12 col-sm-12">
+      <div class=" col-md-12 col-sm-12 contaner" dir="rtl">
+     
+      <!-- <span class="toolbar-spacer"></span> -->
+      <div  class=" col-md-4 col-sm-12" > 
+          <button mat-button (click)="AddProd()" color="primary"  class='BtnPos' > <mat-icon>add</mat-icon>  {{AddProds}}</button> 
+      </div>
+
+
+
+      <div   class=" col-md-4 col-sm-12" > 
+              <span color="primary">   <h2  class='title BtnPos'> {{ title }} </h2> </span>
+           
+      </div> 
+
+      <div class="col-md-4 col-sm-12"  >
+          <mat-form-field class="example-full-width" class='BtnPos'>
+              <mat-label>عرض بحسب التصنيف</mat-label>            
+                  <mat-select  name="category"  
+                   [(value)]="selected"
+                   (change)="productToggle(selected)">
+                    <mat-option  value="ALLCAT"  >
+                      عرض الجميع 
+                    </mat-option>
+      
+                    <mat-option *ngFor="let category of category" [value]=" category.$key ">
+                      {{category.$key}}
+                    </mat-option>
+      
+                  </mat-select>
+                </mat-form-field>
+      </div>
+ 
+      </div>
+      </div>
+      <div class="col-md-12 col-sm-12"  >
+      
+<flash-messages></flash-messages>
+</div>
+<section class="ViewsContainer"  > 
+
+<mat-card class="viewProduct"  *ngFor="let product of tempProducts" >
+   <a class="onClick" (click)="viewProduct(product)"  > <img mat-card-image class="Viewimg" src={{product.picPath}}> </a>
+    <mat-card-content  role="group" >
+     <h3 class="onClick" (click)="viewProduct(product )" >{{product.name }}</h3> 
+     <h6> الكمية المتوفرة :
+            <span> {{product.inventory }}</span>
+     </h6>
+     <h6> التصنيف :
+            <span> {{product.category }}</span>
+     </h6>
+    </mat-card-content>
+    <mat-card-actions role="group" class="OptionBtn">	
+    <button mat-button (click)="viewProduct(product )"> <mat-icon> description </mat-icon> عرض البيانات</button>
+    <button mat-button (click)="openDialog(product )"> <mat-icon> add </mat-icon> إضافة كمية  </button>
+    </mat-card-actions>	
+</mat-card>
+
+</section>
+

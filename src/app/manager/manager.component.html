@@ -1,0 +1,53 @@
+<mat-toolbar  style="background-color:transparent" >
+        <mat-toolbar-row>
+                   
+                    <span class="toolbar-spacer"></span>
+
+            <span color="primary">   <h2 class="title" > {{ title }} </h2> </span>
+              
+            <span class="toolbar-spacer"></span>
+    
+        </mat-toolbar-row>
+      
+    </mat-toolbar>
+
+    <flash-messages></flash-messages>
+
+    
+<mat-card class="example-card">
+
+    <mat-card-content>
+            <div class="col-md-12" dir="rtl" >
+            <div class='col-md-9   col-sm-8 '>
+                    
+            <div class='col-md-12 '> 
+                    <h5 class='header'> الاسم :   <span class='info'>  {{manager.fname}} {{manager.lname}}</span>  </h5> 
+            </div> 
+                
+            <div class='col-md-12 '> 
+                  <h5 class='header'> البريد الألكتروني:   <span class='info'>  {{manager.email}} </span>  </h5> 
+            </div> 
+
+           
+             <div class='col-md-12'> 
+                    <h5 class='header'> الجوال: <span class='info' >  {{manager.phone}}  </span>  </h5>
+             </div>
+            </div>
+            <div class='col-md-3  col-sm-4' >
+                
+                    <div  class="example-header-image"><img src={{manager.picPath}} ></div>
+                    <br>
+                    <h5 class="Imgheader"> {{manager.businessname}} </h5>
+                    <br>
+                              
+                  </div>
+        </div>
+                    
+            </mat-card-content>
+        <div>
+            <button mat-raised-button class= "Btns blueBtn" (click)="onEdite()" > تعديل البيانات الشخصية  </button> 
+            <button mat-raised-button  class='Btns greenBtn' (click)="resetPassword()" > تغيير كلمة سر الحساب </button>  
+            <button mat-raised-button  class='Btns greyBtn' (click)="deleteAccount()" > حذف المشروع  </button> 
+        </div>
+    
+</mat-card>

@@ -1,0 +1,219 @@
+.boutonAlign
+{
+    margin-bottom: 8px;
+}
+  mat-form-field
+  {
+  
+    text-align: right;
+    font-size: 18px;
+    line-height: 2;
+  }
+  .featuresImg 
+  {
+    width: 100%;
+    height: 100%;
+  }
+  figcaption h2
+  {
+    color: white;
+  }
+  .footertext
+  {
+    padding: 0px;
+    margin: 0px;
+  }
+  .Mycontainer
+  {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: inline-block;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+  .figureSize img
+  {
+    width: inherit;
+    height: 250px;
+}
+.title
+{
+  align-self: center;
+  text-align: center;
+  font-size: 3em;
+}
+  .imgcontainer
+  {
+    margin-top: 10%;
+    text-align: center;
+  }
+  .figureSize
+  {   
+     width: 100%;
+    height: 100%;
+  }
+footer 
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+    background-color: #111;
+    color: #6Dc4e2;
+    font-size: 1em;
+    width: 100%;
+    height: 10%;
+}
+figcaption
+{
+  cursor: auto;
+}
+.RouterContainer
+{
+  padding: 7.5em 0 7.5em 0;
+  height: 100%;
+  width: 100%;
+  /* position: fixed;
+  overflow: scroll;
+  bottom: 7em; */
+
+}
+.footerContainer
+{
+  text-align: center !important;
+  padding-top: 1%;
+  width: 100%;
+}
+  .Mainlogo
+  {
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin: 20px 20px 0px 20px;
+  }
+  .dialogTitle , .DialogOptionBtn
+  {
+      display: -ms-inline-grid;;
+      direction: rtl;
+      align-content: center;
+  }
+
+  
+
+  .alert.flash-message{
+    margin-top:8px;
+}
+.example-form {
+    min-width: 150px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .formContainer
+  {
+    font-family: 'Amiri' !important;
+      margin: 1% 2%;
+      align-self: center; 
+      
+  }
+  td mat-form-field
+  {
+  
+    text-align: right;
+    font-size: 18px;
+    float: right;
+    line-height: 2;
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+  .ok
+  {
+    background-color: #6dc4e2;
+  }
+  .cancle
+  {
+    background-color: #a8a8a8;
+  }
+ table
+ {
+
+     width: 100%;
+ }
+ td button
+ {
+   width: 100%;
+   height: 100%;
+ }
+  td mat-form-field app-input-file
+  {
+    float: right;
+    text-indent: 1.5px;
+    text-align: right;
+    font-size: 18px;
+  }
+
+  div {
+    text-align: right;
+  }
+  .red{
+    color: red;
+  }
+  .blueBtn
+  {
+  
+      background-color: #6Dc4e2; 
+  
+  }
+
+  .lightBlueBtn
+  {
+    color:#9DE4F4
+  }
+  
+  .greyBtn
+  {
+      background-color:#A8A8A8;
+  
+  }
+  .Btns
+  {
+      color:white;
+      height: 3em;
+     
+      width: 12em;
+      margin: 1em !important;
+  }
+  .center{
+    text-align: center;
+  }
+  .right
+  {
+    text-align: right;
+    float: right;
+  }
+  .mainText
+  {
+    font-size: 150%;
+  }
+
+
+.ViewsContainer
+{
+    margin-right:15px; 
+    align-content: center;
+    align-self: center;
+    align-items: center;
+}

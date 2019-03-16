@@ -1,0 +1,61 @@
+/* @import "~bootstrap/dist/css/bootstrap.css";*/
+
+@import "~font-awesome/css/font-awesome.min.css"; 
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "https://fonts.googleapis.com/css?family=Amiri|Cairo|Changa|Scheherazade";
+body
+{
+    font-family: 'Amiri' !important;
+    direction:rtl ;
+    text-align: center;
+}
+// <<<<<<< HEAD
+// =======
+input.ng-invalid.ng-dirty{
+}
+button:hover,a.btn:hover{
+    cursor: pointer;
+   }
+
+h2 , h1 , h3 , h4 ,h5 ,h6  {
+    color: #4989A5;
+    
+}
+.alert.flash-message{
+    margin-top:10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    align-items: right;
+    float: right;
+}
+.greenBtn
+{ 
+    
+    background-color: #4989A5;
+  
+}
+
+.blueBtn
+{
+
+    background-color: #6Dc4e2; 
+
+}
+
+.greyBtn
+{
+    background-color:#A8A8A8;
+
+}
+.Btns
+{
+    color:white;
+    height: 3em;
+   
+    width: 12em;
+    margin: 1em !important;
+}
+
+// >>>>>>> 4feecb742d80aaf22e8129c717d12b2c17be0e25

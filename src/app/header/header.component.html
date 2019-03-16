@@ -1,0 +1,207 @@
+
+  <mat-sidenav-container color="accent" class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+     
+    <mat-sidenav  color="accent" class="mat-sidenav primary"  #snav [mode]="mobileQuery.matches ? 'push' : 'side'" [opened]="mobileQuery.matches ? 'false':'true'"
+  [fixedInViewport]="mobileQuery.matches" >
+  <!-- fixedTopGap="56"> -->
+    <mat-nav-list  >
+
+        <span>
+            <div class="example-header-image">
+              <img src='assets/imgs/EradLogo++2.png'> 
+              <img src='assets/imgs/EradLogo++1.png'></div> 
+        </span>
+
+
+
+        <div class="img-logo">
+            <div >
+              <img src="{{manager[8]}}" class="rounded-circle logoImg">
+            </div> 
+            <div>
+            <a routerLink="manager" ><p class="hello"> مرحبا بك {{manager[3]}} {{manager[4]}}</p> </a>
+            </div>
+        </div>
+
+        <!-- <div class="example-header-image"><img src='assets/imgs/EradLogo++1.png'></div> -->
+      <mat-accordion color="accent" >
+          <mat-expansion-panel  [hideToggle]='true' class="primary" [style.border-right]="EmpState ?  '5px solid   #6dc4e2': '' " 
+          (opened)="EmpState = true"
+          (closed)="EmpState = false"
+          [style.box-shadow]="true ? '0 0 0 ':'0 0 0 ' "          >
+            <mat-expansion-panel-header >
+              <mat-panel-title>
+                  <mat-icon>supervisor_account </mat-icon> <span>الموظفين </span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a mat-list-item routerLink="empolyee" >  <mat-icon>supervisor_account </mat-icon> <span>عرض الموظفين   </span></a>
+            <a mat-list-item routerLink="Add_employee" >  <mat-icon>add </mat-icon> <span>إضافة موظف جديد  </span></a>
+          </mat-expansion-panel>
+
+      
+        <mat-expansion-panel 
+        [hideToggle]='true'
+        class="primary" [style.border-right]="ProdState ?  '5px solid   #6dc4e2': '' " 
+        (opened)="ProdState = true"
+        (closed)="ProdState = false"
+        [style.box-shadow]="true ? '0 0 0 ':'0 0 0 ' ">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  <mat-icon> shopping_basket </mat-icon> <span>المنتجات  </span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+              <a mat-list-item routerLink="product" >  <mat-icon>shopping_basket </mat-icon> <span>عرض المنتجات    </span></a>
+              <a mat-list-item routerLink="Add_Product/:id" >  <mat-icon>add </mat-icon> <span>إضافة منتج جديد   </span></a>               
+              <a  *ngIf="false" mat-list-item routerLink="Add_Tag" >  <mat-icon>add</mat-icon> <span>إضافة تصنيف جديد   </span></a>
+            </mat-expansion-panel>
+          
+            <mat-expansion-panel 
+            [hideToggle]='true'
+            [disabled]='true'
+            class="primary" [style.border-right]="CatsState ?  '5px solid   #6Dc4e2': '' " 
+            (mouseenter)="CatsState = true"
+            (mouseleave)="CatsState = false"
+            [style.box-shadow]="true ? '0 0 0 ':'0 0 0 ' ">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      <a  class="sideNItemav" routerLink="tags" >  <mat-icon>work </mat-icon> <span>إدارة التصنيفات     </span></a>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel 
+                [hideToggle]='true'
+                [disabled]='true'
+                class="primary" [style.border-right]="expenState ?  '5px solid   #6Dc4e2': '' " 
+                (mouseenter)="expenState = true"
+                (mouseleave)="expenState = false"
+                [style.box-shadow]="true ? '0 0 0 ':'0 0 0 ' ">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          <a class="sideNItemav" routerLink="expenses" >  <mat-icon>note_add </mat-icon> <span>مصروفات أخرى     </span></a>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel 
+                [hideToggle]='true'
+                [disabled]='true'
+                class="primary" [style.border-right]="finanState ?  '5px solid   #6Dc4e2': '' " 
+                (mouseenter)="finanState = true"
+                (mouseleave)="finanState = false"
+                [style.box-shadow]="true ? '0 0 0 ':'0 0 0 ' ">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          <a  class="sideNItemav" routerLink="finance" >  <mat-icon> description  </mat-icon> <span>الأصول والخصوم     </span></a>
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+
+        <mat-expansion-panel 
+        [hideToggle]='true'
+        [disabled]='true'
+        class="primary" [style.border-right]="ChartsState ?  '5px solid   #6Dc4e2': '' " 
+        (mouseenter)="ChartsState = true"
+        (mouseleave)="ChartsState = false"
+        [style.box-shadow]="true ? '0 0 0 ':'0 0 0 ' ">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+               <a class="sideNItemav" routerLink="charts"><mat-icon> show_chart </mat-icon> <span>التقارير والرسوم البيانية  </span> </a> 
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            </mat-expansion-panel>  
+        </mat-accordion>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+
+     
+
+  <mat-sidenav-content class="example-sidenav-content" >
+  <!-- [style.margin-right.px]="((!(mobileQuery.matches)) && (snav.opened) )? 240 : 0" -->
+   
+  
+<mat-toolbar  class="example-is-mobile example-toolbar"   style='height: 45px !important;
+min-height: 25px;'>
+    <mat-toolbar-row>
+
+  
+    
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <span class="toolbar-spacer"></span>
+     
+    
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item" *ngIf="!isLogin">
+          <a class="nav-link" href="#" routerLink="">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLogin">
+          <a class="nav-link" href="#" routerLink="">Registrarse</a>
+        </li>
+      <!--  <li class="nav-item">
+          <a class="nav-link">{{nombreUsuario}}</a>
+        </li>-->
+
+      </ul>
+
+      <span class="toolbar-spacer"></span>
+      <span class="toolbar-spacer"></span>
+    
+      <span class="toolbar-spacer"></span>
+      <span class="toolbar-spacer"></span>
+      <span class="toolbar-spacer"></span>
+      <span class="toolbar-spacer"></span>
+  
+      <button mat-icon-button  [matMenuTriggerFor]="menu">
+          <mat-icon>account_balance</mat-icon>
+        </button>
+        
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+
+
+
+
+<mat-menu #menu>
+
+<button mat-menu-item (click)="profile()">
+
+  <mat-icon> account_box </mat-icon>
+  <span> الحساب الشخصي </span>
+</button>
+
+<!-- <button mat-menu-item>
+    <mat-icon> build </mat-icon>
+    <span> الإعدادات  </span>
+  </button>
+
+  <button mat-menu-item >
+      <mat-icon> help </mat-icon>
+      <span> المساعدة  </span>
+    </button> -->
+
+    <button mat-menu-item (click)='onClickLogout()'>
+        <mat-icon> exit_to_app </mat-icon>
+        <span> تسجيل الخروج  </span>
+      </button>
+</mat-menu>
+                <!-- comment   -->
+
+  <router-outlet> </router-outlet>
+
+  </mat-sidenav-content>  
+  
+  
+</mat-sidenav-container>
+
+
+
+
+ 
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
+

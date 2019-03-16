@@ -1,0 +1,149 @@
+<mat-toolbar   style="background-color:transparent">
+    <span class="primary">
+        <a  (click)="gobacktoProducts()" > <h6>العودة إلى عرض المنتجات </h6></a> 
+    </span>
+    <span class="toolbar-spacer"></span>
+   </mat-toolbar>
+
+             
+   <div *ngIf="inventory.errors && (inventory.dirty || inventory.touched)" class="alert alert-danger">
+    <mat-error [hidden]="!inventory.errors.required" >   *يرجى إدخال الكمية المتوفرة من المنتج</mat-error >
+</div>
+<div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+  <mat-error [hidden]="!name.errors.required" >*يرجى ادخال اسم المنتج</mat-error>
+</div>
+          
+<div *ngIf="price.errors && (price.dirty || price.touched)" class="alert alert-danger">
+  <mat-error [hidden]="!price.errors.required" >   *يرجى إدخال السعر المرغوب به لبيع المنتج</mat-error>
+</div>
+
+<div *ngIf="cost.errors && (cost.dirty || cost.touched)" class="alert alert-danger">
+  <mat-error [hidden]="!cost.errors.required" >*يرجى إدخال تكلفة شرائك للمنتج</mat-error>
+</div>
+
+
+<div *ngIf="category.errors && (category.dirty || category.touched)" class="alert alert-danger">
+  <mat-error >*يرجى أن تختار تصنيف للمنتج</mat-error>
+</div>
+<mat-card class="formContainer" >
+
+    <mat-card-title>	  <h2> إضافة منتج </h2>  </mat-card-title>
+
+    <mat-card-content>
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" dir="rtl">
+      <input type="hidden" name="$key" #$key="ngModel"  [(ngModel)]="productService.selectedProduct.$key">
+      <input type="hidden" name="picPath" #picPath="ngModel"   [(ngModel)]="productService.selectedProduct.picPath">
+      <input type="hidden" name="picName" #picName="ngModel"  [(ngModel)]="productService.selectedProduct.picName">
+
+    <div class="form-group col-md-6 col-sm-12">
+          <label > <h4> اسم المنتج  <span class="red">* </span> </h4> </label>
+          <input matInput    name="name" #name="ngModel" 
+          [(ngModel)]="productService.selectedProduct.name" class="form-control"
+          placeholder="مثال: قلم أحمر " required>
+          <!-- <mat-error *ngIf="ID.invalid">خانة مطلوبة </mat-error> -->
+
+    </div>
+
+
+    <div class="form-group col-md-6 col-sm-12">
+          <label > <h4> وصف المنتج </h4> </label>
+          <input matInput    name="description" #description="ngModel" 
+          [(ngModel)]="productService.selectedProduct.description" class="form-control"
+          placeholder="مثال: قلم أحمر للكتابة ">       
+    </div>
+    <div class="form-group col-md-6 col-sm-12">
+           <label > <h4> سعر البيع المنتج  <span class="red">* </span> </h4> </label>
+            <input matInput type="number"  name="price" #price="ngModel" 
+            [(ngModel)]="productService.selectedProduct.price" class="form-control"
+            placeholder="مثال: 2.5" required>
+
+    </div>
+
+    <div class="form-group col-md-6 col-sm-12">
+          <label > <h4> سعر تكلفة المنتج  <span class="red">* </span> </h4> </label>
+           <input matInput type="number"    name="cost" #cost="ngModel" class="form-control"
+           [(ngModel)]="productService.selectedProduct.cost" 
+           placeholder="مثال: 1" required>
+          
+    
+    </div>
+ 
+
+    <div class="form-group col-md-6 col-sm-12">
+          <label > <h4> الكمية المتوفرة من المنتج  <span class="red">* </span> </h4> </label>
+          <input matInput type="number"    name="inventory" #inventory="ngModel" 
+          [(ngModel)]="productService.selectedProduct.inventory"   class="form-control"
+          placeholder="مثال: 6" required>
+
+    </div>
+ <!-- [(ngModel)]="productService.selectedProduct.category" -->
+            
+    <div class="form-group col-md-6 col-sm-12">
+        <mat-form-field class="selectOption" >
+          <mat-select  name="category" #category="ngModel"         
+            placeholder="التصنيف"  
+            [(ngModel)]='selectvalue'
+            >
+            <mat-option *ngFor="let category of cat" [value]=" category.$key ">
+              {{category.$key}}
+            </mat-option>
+            <mat-option  *ngIf="exist" value="غير ذلك">
+                غير ذلك
+              </mat-option>
+              <mat-option  [value]="New" (click)='addNewCategory()'>
+                {{New}}
+              </mat-option>
+            </mat-select>
+    </mat-form-field>
+
+    </div>
+
+
+    <div class="form-group custom-file col-md-6 col-sm-12">
+         <label> <h4>صورة المنتج:</h4>  </label>
+           <input type="file" (change)="detectFiles($event)" class="form-control custom-file-input" accept="image/gif, image/jpeg, image/png" >
+                
+           <p>
+              <small > الصيغ المسموح بها gif , jpeg ,png</small> </p>  
+      </div>
+ 
+    <div class="col-md-6 col-sm-12">
+    <div *ngIf="num" >
+      <div class="progress">
+        <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': num + '%' }"></div>
+      </div>
+      التحميل: | {{num}}% اكنمل
+    </div>
+    </div>
+
+    <!--
+    <div class="form-group">
+      <label>Salary</label>
+      <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-dollar"></i>
+          </div>
+          <input    name="salary" #salary="ngModel" [(ngModel)]="productService.selectedProduct.salary" placeholder="0">
+      </div>
+    </div>
+    -->
+    <div class="form-group col-md-12 col-sm-12 center">
+    <button  mat-raised-button class="Btns  blueBtn"  type="submit"  [disabled]="!productForm.valid">
+      إضافة</button>
+
+     <button mat-raised-button  type="button"  class="Btns greyBtn "  (click)="openDialog()">
+    إلغاء</button>
+  </div>
+
+   
+      <!-- <button class="btn ok" color="primary"  type="submit" [disabled]="!productForm.valid">
+        <i class="fa fa-floppy-o"></i>
+         إضافة</button>
+       
+         <button class="btn cancle" color="accent" type="button" (click)="openDialog()">
+        <i class="fa fa-repeat"></i>
+         إالغاء</button> -->
+      
+    </form>
+  </mat-card-content>
+  </mat-card>

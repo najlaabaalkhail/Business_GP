@@ -1,0 +1,56 @@
+
+   <div  class="PageTitl col-md-12 col-sm-12">
+      <div class=" col-md-12 col-sm-12 contane" dir="rtl">
+     
+      <!-- <span class="toolbar-spacer"></span> -->
+      <div  class=" col-md-4 col-sm-4" > </div>
+
+
+
+      <div   class=" col-md-4 col-sm-4" > 
+              <span color="primary">   <h2  class='title'> {{ title }} </h2> </span>           
+      </div> 
+
+      <div class="col-md-4 col-sm-4"  >
+          
+      </div>
+ 
+      </div>
+      </div>
+<div class=" col-md-12 col-sm-12">
+  <flash-messages></flash-messages>
+</div>
+<section class="ViewsContainer  col-md-12 col-sm-12"  >
+  
+  <mat-table #table [dataSource]="dataSource"  matSort>
+
+    <!-- Position Column -->
+<!--               
+    <ng-container [matColumnDef]="header"  *ngFor='let header of displayedColumns' >
+      <mat-header-cell *matHeaderCellDef> {{info[header]}} </mat-header-cell>
+      <mat-cell *matCellDef="let element; ">  {{element.date}}    </mat-cell>
+    </ng-container>
+      displayedColumns=['name','edit','delete'];; -->
+    
+    <ng-container matColumnDef="name" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header  > التصنيف  </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.$key}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="edit"  >
+          <mat-header-cell *matHeaderCellDef mat-sort-header > تعديل التصنيف  </mat-header-cell>
+          <mat-cell *matCellDef="let row"> <button mat-icon-button (click)=edit(row)><mat-icon>mode_edit </mat-icon></button></mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="delete" >
+            <mat-header-cell *matHeaderCellDef mat-sort-header> حذف التصنيف </mat-header-cell>
+            <mat-cell *matCellDef="let row"> <button mat-icon-button  (click)=delete(row)> <mat-icon>delete </mat-icon></button></mat-cell>
+          </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+    
+
+    </section>
+    

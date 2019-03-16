@@ -1,0 +1,58 @@
+<!-- <mat-card class=PageTitle>
+        <h2> {{ title }} </h2>
+
+        <button  mat-raised-button color="primary" class="btn-Add" > 
+            <mat-icon>person_add</mat-icon>
+         {{AddBtn}}
+       
+        </button>
+      
+
+      <input  matInput type="search" placeholder="search emp">
+
+  </mat-card> 
+   -->
+
+   <div  class="PageTitle col-md-12 col-sm-12">
+        <div class=" col-md-12 col-sm-12 contaner" dir="rtl">
+       
+        <!-- <span class="toolbar-spacer"></span> -->
+        <div  class=" col-md-4 col-sm-12" > 
+                <button mat-button (click)="add()"color="primary" class='BtnPos'> <mat-icon>person_add</mat-icon>
+                    {{AddBtn}}</button> 
+        </div>
+
+
+
+        <div   class=" col-md-4 col-sm-12" > 
+                <span color="primary">   <h2  class='title'> {{ title }} </h2> </span>
+             
+        </div> 
+
+        <div class="col-md-4 col-sm-12"  >
+            
+        </div>
+   
+        </div>
+        </div>
+<div class=" col-md-12 col-sm-12">
+    <flash-messages></flash-messages>
+</div>
+  <section class="ViewsContainer"  >
+  
+  <mat-card class="viewProduct"  *ngFor="let employee of employeeList" >
+       <button  mat-button (click)="viewEmployee(employee)" class="Viewimg" >
+         <img (click)="viewemployee(employee)" mat-card-image  src={{employee.picPATH}} 
+         alt={{employee.firstName}} > </button> 
+      <mat-card-content (click)="viewemployee(employee)" role="group" >
+       <h3 class="name">{{employee.firstName }} {{employee.lastName}}</h3> 
+      </mat-card-content> 
+      <div>
+      <button mat-button (click)="viewemployee(employee)" class="OptionBtn"> <mat-icon> description </mat-icon> عرض البيانات</button>
+     
+      </div>	
+  </mat-card>
+  
+  </section>
+  
+  
